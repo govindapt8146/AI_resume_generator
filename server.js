@@ -6,9 +6,17 @@ import fetch from "node-fetch";
 
 dotenv.config();
 
+// const app = express();
+// app.use(cors());
+// app.use(express.json());
+
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+app.use(express.static("public"));
+
+
 
 app.post("/generate", async (req, res) => {
   const { name, email, phone, education, skills, experience } = req.body;
@@ -26,7 +34,6 @@ STRICT RULES:
 - Do NOT add sections not supported by the provided data.
 - Do NOT include explanations, comments, or extra text.
 - Use only the given information, but present it strategically and professionally.
-
 
 OBJECTIVE:
 Transform the provided raw details into a compelling, recruiter-ready resume that:
@@ -97,6 +104,14 @@ res.json({
   }
 });
 
-app.listen(3000, () => {
-  console.log("✅ Server running on http://localhost:3000");
+// app.listen(3000, () => {
+//   console.log("✅ Server running on http://localhost:3000");
+
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
+
+
+// });
