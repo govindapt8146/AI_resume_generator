@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ResumeAI - Smart Resume Builder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 80px;
+      background: #111827;
+      position: sticky;
+      top: 0;
+    }
+
+    nav h2 {
+      color: #6366f1;
+    }
+
+    nav button {
+      background: #6366f1;
+      border: none;
+      padding: 10px 18px;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(145deg, #2361c4, #7589b7);
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: auto;
+      opacity: 0.8;
+    }
+
+    .hero .cta {
+      margin-top: 30px;
+      padding: 14px 28px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(145deg, #1e20a2, #6965b4);
+      color: white;
+    }
+
+    /* ===== FEATURES ===== */
+    .features {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .features h2 {
+      margin-bottom: 50px;
+      font-size: 32px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .feature-card {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 12px;
+      transition: 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      background: #273449;
+    }
+
+    /* ===== PRICING ===== */
+    .pricing {
+      padding: 80px 20px;
+      text-align: center;
+      background: #111827;
+    }
+
+    .pricing h2 {
+      margin-bottom: 50px;
+    }
+
+    .pricing-grid {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .price-card {
+      background: #1e293b;
+      padding: 40px;
+      border-radius: 12px;
+      width: 280px;
+    }
+
+    .price-card h3 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .price-card p {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #6366f1;
+    }
+
+    .price-card button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      background: #6366f1;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #273f76;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <h2>ResumeAI</h2>
+    <button onclick="location.href='generator.html'">Generate Resume</button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Create ATS-Optimized Resumes in Seconds</h1>
+    <p>
+      AI-powered resume builder designed to help you get shortlisted faster.
+      Professional formatting. Instant download. HR-approved.
+    </p>
+    <button class="cta" onclick="location.href='generator.html'">
+      Start Building Now
+    </button>
+  </section>
+
+  <!-- Features -->
+  <section class="features">
+    <h2>Why Choose ResumeAI?</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>ATS Optimized</h3>
+        <p>Designed to pass Applicant Tracking Systems with smart keyword structuring.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Professional Formatting</h3>
+        <p>Clean and modern layout trusted by recruiters and hiring managers.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Instant PDF Download</h3>
+        <p>Generate and download your resume instantly in premium format.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing">
+    <h2>Simple Pricing</h2>
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>Free</h3>
+        <p>$0</p>
+        <button>Get Started</button>
+      </div>
+      <div class="price-card">
+        <h3>Pro</h3>
+        <p>$9</p>
+        <button>Upgrade</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2026 ResumeAI. All rights reserved.
+  </footer>
+
+</body>
+</html>

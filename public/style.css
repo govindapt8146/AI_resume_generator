@@ -1,0 +1,286 @@
+   @page {
+  size: A4;
+  margin: 20mm;
+}
+   
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Times New Roman', serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #6366f1, #0f172a);
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      color: white;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    /* ===== FORM CARD ===== */
+    .form-card {
+      padding: 30px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .form-card h2 {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+    }
+
+    textarea {
+      resize: none;
+      height: 80px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: 10px;
+      transition: 0.3s ease;
+    }
+
+    .generate-btn {
+      background: white;
+      color: #111827;
+    }
+
+    .generate-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ===== OUTPUT CARD ===== */
+    /* .output-card {
+      padding: 40px;
+      border-radius: 20px;
+      background: white;
+      color: #111827;
+      overflow-y: auto;
+      word-wrap: break-word;
+      word-break: break-word;
+      white-space: normal;
+      max-height: 80vh;
+      max-width: 650px;
+      margin: auto;
+      overflow-wrap: break-word;
+      line-height: 1.6;
+    }
+
+    .output-card h3 {
+      margin-top: 20px;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 5px;
+      color: #6366f1;
+    }
+
+    .output-card ul {
+      padding-left: 20px;
+    } */
+
+    .action-buttons {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .download-btn {
+      flex: 1;
+      background: #10b981;
+      color: white;
+    }
+
+    .premium-btn {
+      flex: 1;
+      background: #ef4444;
+      color: white;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+.output-card {
+  position: relative;
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  width: 170mm;
+  min-height: 297mm;
+  margin: auto;
+  /* transform: scale(0.85); */
+  /* transform-origin: top center; */
+}
+
+
+/* Watermark */
+#Watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 42px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+ 
+}
+
+
+#output{
+  width: 100%;
+  margin: auto;
+  font-family: "Times New Roman", serif;
+  font-size: 12pt;
+  line-height: 1.8;
+  color: #000;
+  margin-left: 10mm;
+  /* word-break: break-word; */
+}
+
+/* @media print{
+  #output{
+    width: 210mm;
+    padding: 20mm;
+  }
+} */
+
+#output h1{
+  font-size: 22pt;
+  margin-bottom: 5px;
+}
+
+#output h2{
+  font-size: 14pt;
+  border-bottom: 1px solid #ccc;
+  margin-top: 20px;
+  margin-bottom: 8px;
+
+}
+
+#output ul{
+  padding-left: 16px;
+}
+
+
+#output p,
+#output li,
+#output h1,
+#output h2 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  page-break-inside:auto;
+  padding-left: 18px;
+}
+
+
+#output h1,
+#output h2 {
+  clear: both;
+ text-align: left;
+}
+
+#output p{
+  margin-bottom: 6px;
+  color: #140e0e;
+}
+
+#output li{
+  margin-bottom: 3px;
+}
+
+@media print {
+  body {
+    background:white;
+    margin: 0;
+    padding:0;
+  }
+
+  .container {
+    display: block;
+  }
+
+  .form-card,.action-buttons,button {
+    display: none !important;
+  }
+
+  .output-card {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 20mm;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  #output {
+    width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 15pt;
+  line-height: 1.6;
+  color: #000;
+
+  }
+  #output h1{
+    font-size: 18pt;
+    margin-bottom: 5px;
+  }
+  #output h2{
+    font-size: 14pt;
+    margin-top: 18pt;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #000;
+    text-align: left;
+  }
+   
+  #output p{
+    margin-bottom: 6px;
+  }
+  #output ul{
+    padding-left: 18px;
+
+  }
+  #output li {
+    margin-bottom: 4px;
+
+  }
+  h1,h2{
+    page-break-after: avoid;
+  }
+  p,li{
+    page-break-inside: avoid;
+  }
+  #Watermark{
+    display: none;
+  }
+}

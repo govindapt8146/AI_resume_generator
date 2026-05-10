@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Generator - ResumeAI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+ 
+    <!-- FORM SECTION -->
+    <div class="form-card">
+      <h2>Create Your Resume</h2>
+
+      <input type="text" id="name1" placeholder="Full Name">
+      <input type="email" id="email" placeholder="Email">
+      <input type="text" id="phone" placeholder="Phone Number">
+      <textarea id="education" placeholder="Education"></textarea>
+      <textarea id="skills" placeholder="Skills"></textarea>
+      <textarea id="experience" placeholder="Experience"></textarea>
+
+      <button class="generate-btn" onclick="generate()">
+        Generate Resume
+      </button>
+    </div>
+
+    <!-- OUTPUT SECTION -->
+    <div>
+      <div class="output-card">
+         <div id="Watermark">ResumePro</div>
+         <div id="output">
+       <p >Your resume preview will appear here...</p>
+         </div>
+      </div>
+      <div class="action-buttons">
+        <button class="download-btn" onclick="downloadResume()">Download PDF</button>
+        <button class="premium-btn" onclick="activatePremium()">Remove Watermark ₹0</button>
+      </div>
+    </div>
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+   <script src="script.js"></script>
+
+</body>
+</html>
