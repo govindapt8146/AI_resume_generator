@@ -30,41 +30,46 @@ async function generate() {
   document.getElementById("output").innerHTML = html;
 }
 
-async function downloadResume() {
+// async function downloadResume() {
 
-  const { jsPDF } = window.jspdf;
-  const resumeElement = document.getElementById("output");
+//   const { jsPDF } = window.jspdf;
+//   const resumeElement = document.getElementById("output");
 
-  const canvas = await html2canvas(resumeElement, {
-    scale: 2,
-    useCORS:true,
-    backgroundColor:"#ffffff"
-  });
+//   const canvas = await html2canvas(resumeElement, {
+//     scale: 2,
+//     useCORS:true,
+//     backgroundColor:"#ffffff"
+//   });
 
-  const imgData = canvas.toDataURL("image/png");
+//   const imgData = canvas.toDataURL("image/png");
 
-  const pdf = new jsPDF("p", "mm", "a4");
+//   const pdf = new jsPDF("p", "mm", "a4");
 
-const pdfWidth = pdf.internal.pageSize.getWidth();
+// const pdfWidth = pdf.internal.pageSize.getWidth();
 
-const margin = 10;
+// const margin = 10;
 
-const usableWidth = pdfWidth - margin * 2;
+// const usableWidth = pdfWidth - margin * 2;
 
-const pdfHeight = (canvas.height * usableWidth) / canvas.width;
+// const pdfHeight = (canvas.height * usableWidth) / canvas.width;
 
-pdf.addImage(
-  imgData,
-  "PNG",
-  margin,
-  margin,
-  usableWidth,
-  pdfHeight
-);
+// pdf.addImage(
+//   imgData,
+//   "PNG",
+//   margin,
+//   margin,
+//   usableWidth,
+//   pdfHeight
+// );
 
-  pdf.save("Resume.pdf");
+//   pdf.save("Resume.pdf");
 
+// }
+
+function downloadResume() {
+    window.print();
 }
+
 
 function activatePremium() {
   const btn = document.querySelector(".premium-btn");
