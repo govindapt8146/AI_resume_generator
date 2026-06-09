@@ -1,34 +1,85 @@
+// async function generate() {
+
+//    const btn = document.querySelector(".generate-btn");
+//   btn.innerText = "Generate";
+//   btn.disabled = false;
+
+//   const data = {
+//     name: name1.value,
+//     email: email.value,
+//     phone: phone.value,
+//     education: education.value,
+//     skills: skills.value,
+//     experience: experience.value
+//   };
+
+//   const res = await fetch(
+//   "https://ai-resume-generator-gf4w.onrender.com/generate",
+//   {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify(data)
+//   }
+// );
+
+//   const result = await res.json();
+
+//   // 👇 Convert Markdown to HTML
+//   marked.setOptions({ breaks: true });
+
+//   const html = marked.parse(result.resume);
+
+//   // 👇 Render properly
+//   document.getElementById("output").innerHTML = html;
+// }
+
+
+
+
+
+
 async function generate() {
+  const btn = document.querySelector(".generate-btn");
 
-   const btn = document.querySelector(".generate-btn");
-  btn.innerText = "Generate";
-  btn.disabled = false;
+  try {
+    btn.innerText = "Generating...";
+    btn.disabled = true;
 
-  const data = {
-    name: name1.value,
-    email: email.value,
-    phone: phone.value,
-    education: education.value,
-    skills: skills.value,
-    experience: experience.value
-  };
+    const data = {
+      name: name1.value,
+      email: email.value,
+      phone: phone.value,
+      education: education.value,
+      skills: skills.value,
+      experience: experience.value
+    };
 
-  const res = await fetch("http://localhost:3000/generate", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data),
-  }); 
+    const res = await fetch("/generate", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
 
-  const result = await res.json();
+    const result = await res.json();
 
-  // 👇 Convert Markdown to HTML
-  marked.setOptions({ breaks: true });
+    if (!res.ok) {
+      throw new Error(result.error || "Request failed");
+    }
 
-  const html = marked.parse(result.resume);
+    marked.setOptions({ breaks: true });
+    document.getElementById("output").innerHTML =
+      marked.parse(result.resume);
 
-  // 👇 Render properly
-  document.getElementById("output").innerHTML = html;
+  } catch (err) {
+    alert(err.message);
+    console.error(err);
+  } finally {
+    btn.innerText = "Generate";
+    btn.disabled = false;
+  }
 }
+
+
 
 
 
