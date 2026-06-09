@@ -1,8 +1,8 @@
 async function generate() {
 
    const btn = document.querySelector(".generate-btn");
-  btn.innerText = "Generating...";
-  btn.disabled = true;
+  btn.innerText = "Generate";
+  btn.disabled = false;
 
   const data = {
     name: name1.value,
@@ -30,43 +30,9 @@ async function generate() {
   document.getElementById("output").innerHTML = html;
 }
 
-// async function downloadResume() {
 
-//   const { jsPDF } = window.jspdf;
-//   const resumeElement = document.getElementById("output");
 
-//   const canvas = await html2canvas(resumeElement, {
-//     scale: 2,
-//     useCORS:true,
-//     backgroundColor:"#ffffff"
-//   });
-
-//   const imgData = canvas.toDataURL("image/png");
-
-//   const pdf = new jsPDF("p", "mm", "a4");
-
-// const pdfWidth = pdf.internal.pageSize.getWidth();
-
-// const margin = 10;
-
-// const usableWidth = pdfWidth - margin * 2;
-
-// const pdfHeight = (canvas.height * usableWidth) / canvas.width;
-
-// pdf.addImage(
-//   imgData,
-//   "PNG",
-//   margin,
-//   margin,
-//   usableWidth,
-//   pdfHeight
-// );
-
-//   pdf.save("Resume.pdf");
-
-// }
-
-function downloadResume() {
+function downloadResume() { 
     window.print();
 }
 
