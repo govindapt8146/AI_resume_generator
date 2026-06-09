@@ -54,7 +54,7 @@ async function generate() {
       experience: experience.value
     };
 
-    const res = await fetch("/generate", {
+    const res = await fetch("https://ai-resume-generator-gf4w.onrender.com/generate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data)
