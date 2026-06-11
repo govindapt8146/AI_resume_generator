@@ -5,7 +5,7 @@ async function generate() {
     btn.innerText = "Generating...";
     btn.disabled = true;
 
-// console.log(document.getElementById("template"));
+
 
     const data = {
       name: name1.value,
@@ -14,7 +14,7 @@ async function generate() {
       education: education.value,
       skills: skills.value,
       experience: experience.value
-      // template: document.getElementById("template").value
+      
     };
 
     const res = await fetch("https://ai-resume-generator-gf4w.onrender.com/generate", {

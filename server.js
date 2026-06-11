@@ -8,7 +8,7 @@ dotenv.config();
 
 const app = express();
 
-// const cors=require("cors");
+
 app.use(cors());
 app.use(express.json());
 
@@ -28,41 +28,10 @@ app.get("/", (req, res) => {
 app.post("/generate", async (req, res) => {
   const { name, email, phone, education, skills, experience } = req.body;
 
-
-
-// let templateInstruction = "";
-
-// if (template === "professional") {
-//   templateInstruction = `
-//   Focus on corporate formatting.
-//   Emphasize leadership, achievements and professionalism.
-//   Use formal ATS-friendly language.
-//   `;
-// }
-
-// if (template === "modern") {
-//   templateInstruction = `
-//   Use a modern and concise style.
-//   Highlight technical skills and projects prominently.
-//   Keep content dynamic and impactful.
-//   `;
-// }
-
-// if (template === "fresher") {
-//   templateInstruction = `
-//   Focus on education, skills, internships, projects and learning potential.
-//   Do not overemphasize work experience.
-//   Suitable for students and recent graduates.
-//   `;
-// }
-
-
-
  const prompt = `
 You are a senior executive resume strategist and ATS optimization expert.
 
-TEMPLATE STYLE:
-${templateInstruction}
+
 
 Create a premium, high-impact, ATS-optimized resume using ONLY the information provided below.
 
@@ -132,10 +101,7 @@ Return ONLY the final resume in proper Markdown format.
 })
     });
 
-//     const data = await response.json();
-// res.json({
-//   resume: data.choices[0].message.content
-// });
+
 
 const data = await response.json();
 
