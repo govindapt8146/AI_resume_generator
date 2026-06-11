@@ -17,12 +17,13 @@
       background: #0f172a;
       color: white;
       line-height: 1.6;
+      
     }
 
     /* ===== NAVBAR ===== */
     nav {
       display: flex;
-      justify-content: space-between;
+      justify-content:space-between;
       padding: 20px 80px;
       background: #111827;
       position: sticky;
@@ -41,6 +42,23 @@
       border-radius: 6px;
       cursor: pointer;
     }
+     nav select {
+      background: #464ebe;
+      border: none;
+      padding: 10px 12px;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+       nav option {
+      background: #464ebe;
+      border: none;
+      padding: 10px 12px;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
 
     /* ===== HERO SECTION ===== */
     .hero {
@@ -54,12 +72,12 @@
       margin-bottom: 20px;
     }
 
-    .hero p {
+    /* .hero h4 {
       font-size: 18px;
       max-width: 600px;
       margin: auto;
       opacity: 0.8;
-    }
+    } */
 
     .hero .cta {
       margin-top: 30px;
@@ -164,15 +182,22 @@
   <nav>
     <h2>ResumeAI</h2>
     <button onclick="location.href='generator.html'">Generate Resume</button>
+  <!-- <label>Select Resume Template</label> -->
+<!-- <select id="template">
+  <option value="professional">Professional</option>
+  <option value="modern">Modern</option>
+  <option value="fresher">Fresher</option>
+</select> -->
+  
   </nav>
 
   <!-- Hero Section -->
   <section class="hero">
     <h1>Create ATS-Optimized Resumes in Seconds</h1>
-    <p>
+    <h4>
       AI-powered resume builder designed to help you get shortlisted faster.
       Professional formatting. Instant download. HR-approved.
-    </p>
+    </h4>
     <button class="cta" onclick="location.href='generator.html'">
       Start Building Now
     </button>
