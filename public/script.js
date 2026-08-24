@@ -194,6 +194,36 @@ document
 
 
 
+    // =====================================================
+// CURRENT DATE
+// =====================================================
+
+function setCurrentDate() {
+
+    const dateElement = document.getElementById("currentDate");
+
+    if (!dateElement) {
+        return;
+    }
+
+    const today = new Date();
+
+    const day = String(today.getDate()).padStart(2, "0");
+
+    const month = today.toLocaleString("en-IN", {
+        month: "long"
+    });
+
+    const year = today.getFullYear();
+
+    dateElement.textContent =
+        `Date: ${day} ${month} ${year}`;
+}
+
+
+// Set date when page loads
+setCurrentDate();
+
 // =====================================================
 // GENERATE RESUME
 // =====================================================

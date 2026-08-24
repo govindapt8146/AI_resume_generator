@@ -276,60 +276,47 @@ button {
 ===================================================== */
 
 .resume-area {
-
     width: 100%;
-
-    overflow-x: auto;
-
+    min-width: 0;
+    overflow: hidden;
 }
-
-
-
 /* =====================================================
    OUTPUT CARD
 ===================================================== */
 
 .output-card {
-
     position: relative;
 
-    background: white;
-
-    width: 210mm;
+    width: 100%;
+    max-width: 210mm;
 
     min-height: 297mm;
 
     margin: 0 auto;
 
+    background: white;
+
     border-radius: 8px;
 
-    box-shadow:
-        0 10px 30px
-        rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 
     overflow: hidden;
-
 }
-
 
 
 /* =====================================================
    ACTUAL RESUME
 ===================================================== */
 
+
 #resume {
 
     position: relative;
 
-    width: 210mm;
-
+    width: 100%;
     min-height: 297mm;
 
-    padding:
-        18mm
-        18mm
-        25mm
-        18mm;
+    padding: 18mm;
 
     background: white;
 
@@ -411,15 +398,17 @@ button {
 
     color: #000;
 
-    font-family:
-        "Times New Roman",
-        serif;
+    font-family: "Times New Roman", serif;
 
     font-size: 12pt;
 
     line-height: 1.55;
 
     padding-right: 38mm;
+
+    overflow-wrap: break-word;
+
+    word-wrap: break-word;
 
 }
 
@@ -496,87 +485,244 @@ button {
 ===================================================== */
 
 .signature-container {
-
-    margin-top: 25px;
-
+    position: absolute;
+    right: 18mm;
+    bottom: 15mm;
     text-align: right;
-
-    min-height: 55px;
-
 }
-
 
 .resume-signature {
-
     width: 55mm;
-
     max-height: 25mm;
-
     object-fit: contain;
-
     display: none;
-
 }
-
-
 
 /* =====================================================
    TABLET
 ===================================================== */
 
+
 @media (max-width: 1100px) {
 
+    body {
+        padding: 20px;
+    }
+
     .container {
-
         grid-template-columns: 1fr;
-
     }
 
     .resume-area {
+        width: 100%;
+    }
 
-        overflow-x: auto;
-
+    .output-card {
+        width: 100%;
+        max-width: 210mm;
+        margin: 0 auto;
     }
 
 }
-
-
 
 /* =====================================================
    MOBILE
 ===================================================== */
 
+
 @media (max-width: 600px) {
 
     body {
-
-        padding: 15px;
-
+        padding: 10px;
     }
 
+    .container {
+        width: 100%;
+        display: block;
+    }
 
     .form-card {
-
-        padding: 20px;
-
+        width: 100%;
+        padding: 18px;
+        margin-bottom: 20px;
     }
 
+    .form-card h2 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    input,
+    textarea,
+    button {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    textarea {
+        height: 70px;
+    }
+
+
+    /* Resume preview */
+
+    .resume-area {
+        width: 100%;
+        overflow: hidden;
+    }
 
     .output-card {
 
-        width: 210mm;
+        width: 100%;
+
+        min-height: auto;
+
+        height: auto;
+
+        border-radius: 4px;
 
     }
 
+
+    #resume {
+
+        width: 100%;
+
+        min-height: 297mm;
+
+        padding: 12mm 8mm 25mm 8mm;
+
+    }
+
+
+    #output {
+
+        font-size: 10pt;
+
+        line-height: 1.45;
+
+        padding-right: 30mm;
+
+    }
+
+
+    #output h1 {
+        font-size: 18pt;
+    }
+
+    #output h2 {
+        font-size: 14pt;
+    }
+
+    #output h3 {
+        font-size: 12pt;
+    }
+
+
+    /* Profile photo */
+
+    .resume-profile-photo {
+
+        width: 25mm;
+
+        height: 32mm;
+
+        top: 10mm;
+
+        right: 8mm;
+
+    }
+
+
+    /* Signature */
+
+    .resume-signature {
+
+        width: 42mm;
+
+        max-height: 20mm;
+
+    }
+
+
+    /* Footer */
+
+    .resume-footer {
+
+        left: 8mm;
+
+        right: 8mm;
+
+        bottom: 10mm;
+
+    }
+
+
+   
+
+
+    /* Buttons */
 
     .action-buttons {
 
         flex-direction: column;
 
+        gap: 8px;
+
     }
 
 }
 
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+
+    body {
+        padding: 6px;
+    }
+
+    .form-card {
+        padding: 14px;
+    }
+
+    #resume {
+
+        padding-left: 6mm;
+
+        padding-right: 6mm;
+
+    }
+
+    #output {
+
+        font-size: 9pt;
+
+        padding-right: 27mm;
+
+    }
+
+    .resume-profile-photo {
+
+        width: 23mm;
+
+        height: 29mm;
+
+        right: 6mm;
+
+    }
+
+    .resume-footer {
+
+        left: 6mm;
+
+        right: 6mm;
+
+    }
+
+}
 
 
 /* =====================================================
@@ -699,4 +845,25 @@ button {
 
     }
 
+}
+
+
+
+/* =====================================================
+   CURRENT DATE - BOTTOM LEFT
+===================================================== */
+
+.resume-date {
+    position: absolute;
+
+    left: 18mm;
+    bottom: 15mm;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 11pt;
+
+    color: #000;
+
+    text-align: left;
 }
