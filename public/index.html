@@ -262,6 +262,300 @@ option{
     background:#6264df;
 }
 
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+/* Tablet */
+@media (max-width: 900px) {
+
+    nav {
+        padding: 15px 30px;
+    }
+
+    .hero {
+        padding: 80px 25px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero h4 {
+        font-size: 16px;
+    }
+
+    .features {
+        padding: 60px 25px;
+    }
+
+    .pricing {
+        padding: 60px 25px;
+    }
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+
+    /* ================= NAVBAR ================= */
+
+    nav {
+        width: 100%;
+        padding: 12px 15px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 10px;
+    }
+
+
+    .logo {
+        gap: 8px;
+        min-width: 0;
+    }
+
+
+    .logo-icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 12px;
+        flex-shrink: 0;
+    }
+
+
+    .logo-icon::before {
+        left: 8px;
+        top: 6px;
+        width: 17px;
+        height: 34px;
+    }
+
+
+    .logo-icon::after {
+        left: 18px;
+        top: 7px;
+        width: 18px;
+        height: 16px;
+    }
+
+
+    .line {
+        left: 14px;
+        width: 11px;
+        height: 3px;
+    }
+
+
+    .line1 {
+        top: 15px;
+    }
+
+
+    .line2 {
+        top: 22px;
+    }
+
+
+    .logo-text h2 {
+        font-size: 22px;
+    }
+
+
+    .logo-text p {
+        font-size: 7px;
+        letter-spacing: 0.8px;
+        white-space: nowrap;
+    }
+
+
+    nav button {
+        padding: 8px 10px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+
+    /* ================= HERO ================= */
+
+    .hero {
+        padding: 65px 18px;
+    }
+
+
+    .hero h1 {
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: 18px;
+    }
+
+
+    .hero h4 {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+    /* Template selector */
+
+    .hero > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-top: 25px;
+    }
+
+
+    select {
+        width: 100%;
+        max-width: 280px;
+        margin-right: 0;
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+
+
+    .hero .cta {
+        width: 100%;
+        max-width: 280px;
+        margin-top: 0;
+        padding: 13px 20px;
+        font-size: 15px;
+    }
+
+
+    /* ================= FEATURES ================= */
+
+    .features {
+        padding: 55px 18px;
+    }
+
+
+    .features h2 {
+        font-size: 27px;
+        margin-bottom: 35px;
+    }
+
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        width: 100%;
+    }
+
+
+    .feature-card {
+        width: 100%;
+        padding: 25px 20px;
+    }
+
+
+    .feature-card h3 {
+        font-size: 20px;
+    }
+
+
+    .feature-card p {
+        font-size: 14px;
+    }
+
+
+    /* ================= PRICING ================= */
+
+    .pricing {
+        padding: 55px 18px;
+    }
+
+
+    .pricing h2 {
+        font-size: 27px;
+        margin-bottom: 35px;
+    }
+
+
+    .pricing-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+
+    .price-card {
+        width: 100%;
+        max-width: 300px;
+        padding: 30px 25px;
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    footer {
+        padding: 25px 15px;
+        font-size: 13px;
+    }
+}
+
+
+/* Very small phones */
+@media (max-width: 380px) {
+
+    nav {
+        padding: 10px;
+    }
+
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .logo-text h2 {
+        font-size: 19px;
+    }
+
+
+    .logo-text p {
+        font-size: 6px;
+    }
+
+
+    nav button {
+        font-size: 11px;
+        padding: 7px 8px;
+    }
+
+
+    .hero {
+        padding: 50px 15px;
+    }
+
+
+    .hero h1 {
+        font-size: 27px;
+    }
+
+
+    .hero h4 {
+        font-size: 13px;
+    }
+
+
+    .features h2,
+    .pricing h2 {
+        font-size: 24px;
+    }
+}
+
   </style>
 </head>
 
