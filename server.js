@@ -10,7 +10,8 @@ const app = express();
 
 
 app.use(cors());
-app.use(express.json());
+// app.use(express.json());
+app.use(express.json({ limit: "20mb" }));
 
 app.use(express.static("public"));
 
@@ -26,7 +27,7 @@ app.get("/", (req, res) => {
 
 
 app.post("/generate", async (req, res) => {
-  const { name, email, phone, education, skills, experience } = req.body;
+  const { name, email, phone, education, skills, experience,certifications,career,references} = req.body;
 
  const prompt = `
 You are a senior executive resume strategist and ATS optimization expert.
@@ -73,6 +74,10 @@ STRUCTURE (Only include sections that have data):
 4. Skills
 5. Experience
 6. Education
+7. Certifications
+8. Career Objective
+9. References
+
 
 CANDIDATE INFORMATION:
 
@@ -82,6 +87,14 @@ Phone: ${phone}
 Education: ${education}
 Skills: ${skills}
 Experience: ${experience}
+Certifications: ${certifications}
+Career Objective: ${career}
+References: ${references}
+
+
+IMPORTANT:
+If Certifications, Career Objective, or References are provided in the candidate information, you MUST include these sections in the final resume.
+Do not omit them.
 
 Return ONLY the final resume in proper Markdown format. 
 `;
@@ -96,7 +109,8 @@ Return ONLY the final resume in proper Markdown format.
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-  model: "meta-llama/llama-3-8b-instruct",
+  // model: "meta-llama/llama-3-8b-instruct",
+  model: "meta-llama/llama-3.3-70b-instruct",
   messages: [{ role: "user", content: prompt }]
 })
     });

@@ -1,51 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Resume Generator - ResumeAI</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  
+
   <div class="container">
- 
-    <!-- FORM SECTION -->
+
+    <!-- ================= FORM SECTION ================= -->
     <div class="form-card">
+
       <h2>Create Your Resume</h2>
 
       <input type="text" id="name1" placeholder="Full Name">
       <input type="email" id="email" placeholder="Email">
       <input type="text" id="phone" placeholder="Phone Number">
+
       <textarea id="education" placeholder="Education"></textarea>
       <textarea id="skills" placeholder="Skills"></textarea>
       <textarea id="experience" placeholder="Experience"></textarea>
+      <textarea id="certifications" placeholder="Certifications"></textarea>
+      <textarea id="career" placeholder="Career Objective"></textarea>
+      <textarea id="references" placeholder="References"></textarea>
 
-      <button class="generate-btn" onclick="generate()">
+
+      <!-- ================= PROFILE PHOTO ================= -->
+
+      <div class="photo-upload">
+
+        <label for="photoInput1">Profile Photo</label>
+
+        <input
+          type="file"
+          id="photoInput1"
+          accept="image/*"
+        >
+
+        <img
+          id="profilePhotoPreview"
+          class="upload-preview profile-preview"
+          alt="Profile Photo Preview"
+        >
+
+      </div>
+
+
+      <!-- ================= SIGNATURE ================= -->
+
+      <div class="signature-upload">
+
+        <label for="photoInput2">Signature</label>
+
+        <input
+          type="file"
+          id="photoInput2"
+          accept="image/*"
+        >
+
+        <img
+          id="signaturePreview"
+          class="upload-preview signature-preview"
+          alt="Signature Preview"
+        >
+
+      </div>
+
+
+      <button
+        class="generate-btn"
+        onclick="generate()"
+      >
         Generate Resume
       </button>
+
     </div>
 
-    <!-- OUTPUT SECTION -->
-    <div>
+
+    <!-- ================= OUTPUT SECTION ================= -->
+
+    <div class="resume-area">
+
       <div class="output-card">
-         <div id="Watermark">resumeAI.com</div>
-         <div id="output">
-       <p >Your resume preview will appear here...</p>
-         </div>
+
+        <!-- THIS ENTIRE DIV IS THE ACTUAL RESUME -->
+
+        <div id="resume">
+
+          <!-- Watermark -->
+
+          <div id="Watermark">
+            resumeAI.com
+          </div>
+
+
+          <!-- Profile photo inside resume -->
+
+          <img
+            id="resumeProfilePhoto"
+            class="resume-profile-photo"
+            alt="Profile Photo"
+          >
+
+
+          <!-- AI generated resume -->
+
+          <div id="output">
+
+            <p>
+              Your resume preview will appear here...
+            </p>
+
+          </div>
+
+
+          <!-- Signature inside resume -->
+
+          <div class="signature-container">
+
+            <img
+              id="resumeSignature"
+              class="resume-signature"
+              alt="Signature"
+            >
+
+          </div>
+
+        </div>
+
       </div>
+
+
+      <!-- Buttons remain OUTSIDE the resume -->
+
       <div class="action-buttons">
-        <button class="download-btn" onclick="downloadResume()">Download PDF</button>
-        <button class="premium-btn" onclick="activatePremium()">Remove Watermark ₹0</button>
+
+        <button
+          class="download-btn"
+          onclick="downloadResume()"
+        >
+          Download PDF
+        </button>
+
+        <button
+          class="premium-btn"
+          onclick="activatePremium()"
+        >
+          Remove Watermark ₹0
+        </button>
+
       </div>
+
     </div>
 
   </div>
+
+
+  <!-- Libraries -->
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-   <script src="script.js"></script>
+
+  <script src="script.js"></script>
 
 </body>
+
 </html>

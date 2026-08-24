@@ -24,11 +24,99 @@
     nav {
       display: flex;
       justify-content:space-between;
-      padding: 20px 80px;
+      padding: 15px 80px;
       background: #111827;
       position: sticky;
       top: 0;
+      z-index:1000;
     }
+
+    /*==========================
+        LOGO
+     ===========================*/
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo-icon{
+    width:65px;
+    height:65px;
+    background:linear-gradient(135deg,#0b46ff,#21d4fd);
+    border-radius:18px;
+    position:relative;
+    overflow:hidden;
+}
+
+/* Create the R shape */
+
+.logo-icon::before{
+    content:"";
+    position:absolute;
+    left:12px;
+    top:8px;
+    width:24px;
+    height:48px;
+    background:#111827;
+    border-radius:12px;
+}
+
+.logo-icon::after{
+    content:"";
+    position:absolute;
+    left:26px;
+    top:10px;
+    width:26px;
+    height:22px;
+    background:#111827;
+    border-radius:0 14px 14px 0;
+}
+
+.line{
+    position:absolute;
+    left:21px;
+    width:15px;
+    height:4px;
+    background:#2dd4ff;
+    border-radius:20px;
+}
+
+.line1{
+    top:21px;
+}
+
+.line2{
+    top:31px;
+}
+
+.logo-text h2{
+    font-size:34px;
+    font-weight:800;
+    color:#fff;
+    line-height:1;
+}
+
+.logo-text h2 span{
+    background:linear-gradient(180deg,#27d7ff,#0b63ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.logo-text p{
+    margin-top:4px;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.5px;
+    color:#fff;
+}
+
+.logo-text p span{
+    background:linear-gradient(90deg,#2457ff,#22d3ee);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
 
     nav h2 {
       color: #6366f1;
@@ -41,6 +129,7 @@
       color: white;
       border-radius: 6px;
       cursor: pointer;
+      font-size: 16px;
     }
   
 
@@ -154,6 +243,25 @@
       background: #273f76;
       opacity: 0.7;
     }
+
+select{
+    padding:14px 20px;
+    border-radius:8px;
+    border:none;
+    color: white;
+    font-size:16px;
+    margin-right:10px;
+    cursor:pointer;
+    background: linear-gradient(145deg, #1e20a2, #6965b4);
+}
+option{
+    border:none;
+    color:black;
+    font-size:16px;
+    cursor:pointer;
+    background:#6264df;
+}
+
   </style>
 </head>
 
@@ -161,7 +269,17 @@
 
   <!-- Navbar -->
   <nav>
-    <h2>ResumeAI</h2>
+    <div class="logo">
+    <div class="logo-icon">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+    </div>
+
+    <div class="logo-text">
+        <h2>Resume<span>AI</span></h2>
+        <p>BUILD SMARTER. <span>GET HIRED FASTER.</span></p>
+    </div>
+</div>
     <button onclick="location.href='generator.html'">Generate Resume</button>
  
   </nav>
@@ -173,9 +291,25 @@
       AI-powered resume builder designed to help you get shortlisted faster.
       Professional formatting. Instant download. HR-approved.
     </h4>
-    <button class="cta" onclick="location.href='generator.html'">
+    <!-- <button class="cta" onclick="location.href='generator.html'">
       Start Building Now
-    </button>
+    </button> -->
+
+<div >
+  
+  <select id="templateType">
+    <option class = "selectT"  value="professional">Professional</option>
+    <option class = "selectT"  value="fresher">Fresher</option>
+    <option class = "selectT"  value="modern">Modern</option>
+  </select>
+
+  <button class="cta" onclick="openGenerator()">
+    Start Building Now
+  </button>
+
+</div>
+
+
   </section>
 
   <!-- Features -->
@@ -218,6 +352,14 @@
   <footer>
     © 2026 ResumeAI. All rights reserved.
   </footer>
+<script>
+function openGenerator() {
+    const template =
+      document.getElementById("templateType").value;
 
+    window.location.href =
+      `generator.html?template=${template}`;
+}
+</script>
 </body>
 </html>
